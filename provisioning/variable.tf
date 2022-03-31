@@ -5,3 +5,10 @@ variable "base_dnsdomain" {
 }
 
 variable "azure_default_location" {}
+
+variable "webapp_name_list" {
+  default = [
+    "nginx",
+    "httpd",
+  ]
+}
