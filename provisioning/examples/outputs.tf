@@ -1,10 +1,3 @@
-output "dns_main" {
-  value = {
-    dns_name     = google_dns_managed_zone.main.dns_name,
-    name_servers = google_dns_managed_zone.main.name_servers,
-  }
-}
-
 output "endpoints" {
   value = {
     frontend = google_cloud_run_service.frontend.status[0].url,
