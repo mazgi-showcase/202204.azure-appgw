@@ -1,5 +1,7 @@
 # Example for Azure Application Gateway
 
+![structure](docs/images/drawing/drawing.001.png)
+
 ## How to set up
 
 You need one Azure subscription you can fully manage.  
