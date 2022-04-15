@@ -16,6 +16,7 @@ resource "azurerm_linux_web_app" "app" {
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   service_plan_id     = azurerm_service_plan.app[each.key].id
+  https_only          = false
   site_config {
     application_stack {
       docker_image     = each.key

@@ -8,6 +8,7 @@ x-service-provisioning-base: &provisioning-base
     - zsh
     - -ic
     - |
+      rm -rf /tmp/provisioning/.terraform.d
       /project/scripts/provisioning.init-with-azure.sh
   environment:
     - CURRENT_ENV_NAME
@@ -21,6 +22,7 @@ x-service-provisioning-base: &provisioning-base
     - TF_DATA_DIR=/tmp/provisioning/.terraform.d/
     - TF_VAR_azure_default_location=${AZURE_DEFAULT_LOCATION}
     - TF_VAR_project_unique_id=${PROJECT_UNIQUE_ID}
+    - TF_VAR_allowed_ipaddr_list=${TF_VAR_allowed_ipaddr_list}
   user: "${UID:-0}:${GID:-0}"
   volumes:
     - provisioning-home-developer:/home/developer

@@ -27,6 +27,10 @@ ARM_CLIENT_SECRET=********
 ARM_TENANT_ID=********
 ```
 
+```console
+echo TF_VAR_allowed_ipaddr_list='["'$(curl -sL ifconfig.io)'/32"]' >> .env
+```
+
 If you are using Linux, you should add UID and GID to the `.env` file as follows.
 
 ```shellsession
